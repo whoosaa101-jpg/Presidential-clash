@@ -4,6 +4,18 @@ const { Server } = require('socket.io');
 const PORT = process.env.PORT || 3001;
 
 const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        return res.end(`
+            <body style="background:#0d1117; color:white; font-family:sans-serif; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; margin:0;">
+                <h1 style="color:#f1c40f;">🦅 PRESIDENTIAL CLASH: D.C. HUB</h1>
+                <p>STATUS: <span style="color:#2ecc71;">ONLINE & SECURED</span></p>
+                <div style="padding:20px; border:1px solid #30363d; border-radius:10px; background:#161b22;">
+                    Socket.io is listening for incoming match requests.
+                </div>
+            </body>
+        `);
+    }
     if (req.url === '/health') {
         res.writeHead(200);
         return res.end('D.C. SECURE - ONLINE');
