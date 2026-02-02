@@ -4,6 +4,7 @@ const { Server } = require('socket.io');
 const PORT = process.env.PORT || 3001;
 
 const server = http.createServer((req, res) => {
+    // 1. Landing Page
     if (req.url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         return res.end(`
@@ -16,10 +17,20 @@ const server = http.createServer((req, res) => {
             </body>
         `);
     }
+
+    // 2. Health Check
     if (req.url === '/health') {
         res.writeHead(200);
         return res.end('D.C. SECURE - ONLINE');
     }
+
+    // 3. ALLOW SOCKET.IO HANDSHAKE (IMPORTANT)
+    // If it's a socket.io request, do NOT return 404. Let Socket.io handle it.
+    if (req.url.startsWith('/socket.io')) {
+        return;
+    }
+
+    // 4. Actual 404
     res.writeHead(404);
     res.end('NOT_FOUND');
 });
