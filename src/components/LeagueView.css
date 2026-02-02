@@ -1,0 +1,173 @@
+.league-view-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1a1a1a;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+}
+
+.league-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.league-badge {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.trophy-count {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #f1c40f;
+}
+
+.progression-bar-container {
+    width: 100%;
+    height: 30px;
+    background: #333;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progression-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #f1c40f, #e67e22);
+    transition: width 0.5s ease;
+}
+
+.progression-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: white;
+}
+
+.season-pass-section {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.pass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.buy-pass-banner {
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 900;
+    color: #000;
+}
+
+.buy-btn {
+    background: #000;
+    color: #f1c40f;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+
+.reward-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reward-tier {
+    background: #222;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reward-tier.locked {
+    opacity: 0.6;
+}
+
+.tier-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.tier-rewards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.reward-box {
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.reward-box:active {
+    transform: scale(0.95);
+}
+
+.reward-box.premium {
+    border: 2px solid #f1c40f;
+}
+
+.reward-box.blurred {
+    filter: blur(2px);
+}
+
+.reward-label {
+    font-size: 0.6rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.reward-icon {
+    font-size: 1.5rem;
+}
+
+.reward-value {
+    font-size: 0.8rem;
+    font-weight: 800;
+}

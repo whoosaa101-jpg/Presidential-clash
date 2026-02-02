@@ -1,0 +1,175 @@
+.social-tab {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+    overflow-y: auto;
+    color: white;
+}
+
+.social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #bdc3c7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.personal-card {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.personal-card .rank {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.personal-card .info .name {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.personal-card .info .trophies {
+    font-weight: 900;
+    color: #f1c40f;
+}
+
+.stats-mini {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    font-weight: 900;
+    opacity: 0.8;
+}
+
+.leaderboard-list {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+.rank-badge {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.player-name {
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: #2ecc71;
+}
+
+.status-dot.in-battle {
+    background: #3498db;
+    animation: pulse 1s infinite;
+}
+
+.status-dot.offline {
+    background: #95a5a6;
+}
+
+.player-trophies {
+    font-weight: 900;
+    color: #f1c40f;
+}
+
+.clan-info {
+    background: rgba(44, 62, 80, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.clan-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.clan-stat .label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #95a5a6;
+}
+
+.clan-stat .value {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.clan-btn {
+    background: #3498db;
+    border: none;
+    border-bottom: 4px solid #2980b9;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

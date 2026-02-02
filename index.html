@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>presidedntial-clash</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="emergency-error"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#800; color:white; padding:40px; font-family:monospace; z-index:9999; overflow:auto;">
+    <h1>SYSTEM BOOT ERROR</h1>
+    <p>A critical JavaScript error prevented the game from starting. This is usually caused by an old browser cache.</p>
+    <pre id="error-log"></pre>
+    <div style="display:flex; gap:10px;">
+      <button onclick="window.location.reload()"
+        style="padding:15px 25px; font-weight:bold; cursor:pointer;">RETRY</button>
+      <button onclick="localStorage.clear(); window.location.href = window.location.pathname + '?v=' + Date.now();"
+        style="padding:15px 25px; font-weight:bold; background:#f1c40f; border:none; cursor:pointer;">FORCE CACHE BUST
+        (HARD RESET)</button>
+    </div>
+  </div>
+  <script>
+    document.body.style.background = '#1a1a1a'; // Set a dark background immediately
+    console.log("Inline script running");
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      const errBox = document.getElementById('emergency-error');
+      const logBox = document.getElementById('error-log');
+      if (errBox) errBox.style.display = 'block';
+      if (logBox) logBox.innerText += "\n" + msg + " at " + lineNo + ":" + columnNo;
+      console.error(msg, error);
+      return false;
+    };
+    // Immediate visual confirmation
+    setTimeout(() => {
+      const status = document.createElement('div');
+      status.style = "position:fixed; top:0; left:0; background:green; color:white; padding:5px; z-index:10000; font-size:10px;";
+      status.innerText = "JS ACTIVE (In-file)";
+      document.body.appendChild(status);
+    }, 100);
+  </script>
+  <script id="main-bundle" type="module" src="src/main.jsx"></script>
+  </script>
+</body>
+
+</html>

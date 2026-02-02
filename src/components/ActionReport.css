@@ -1,0 +1,180 @@
+.action-report-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    font-family: 'Inter', sans-serif;
+}
+
+.results-card {
+    width: 90%;
+    max-width: 800px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    overflow: hidden;
+    color: white;
+    border: 2px solid #333;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.results-card.win {
+    border-color: #f1c40f;
+}
+
+.results-card.loss {
+    border-color: #e74c3c;
+}
+
+.results-header {
+    background: #222;
+    padding: 30px;
+    text-align: center;
+}
+
+.result-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.win .result-title {
+    color: #f1c40f;
+}
+
+.loss .result-title {
+    color: #e74c3c;
+}
+
+.mvp-banner {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: gold;
+    color: black;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.results-body {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.summary-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.summary-stat .label {
+    color: #7f8c8d;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.summary-stat .value {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.xp-title {
+    font-size: 0.8rem;
+    color: #f1c40f;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.xp-gain-row {
+    margin-bottom: 15px;
+}
+
+.xp-name {
+    font-size: 0.7rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.xp-bar-container {
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f1c40f, #f39c12);
+    width: 0;
+    transition: width 1.5s ease-out 0.5s;
+}
+
+.xp-level {
+    font-size: 0.6rem;
+    color: #7f8c8d;
+    text-align: right;
+}
+
+.results-footer {
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    background: #151515;
+}
+
+.results-footer button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.rematch-btn {
+    background: #3498db;
+    color: white;
+}
+
+.exit-btn {
+    background: #333;
+    color: white;
+}
+
+.results-footer button:hover {
+    transform: scale(1.02);
+    filter: brightness(1.2);
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .results-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+}

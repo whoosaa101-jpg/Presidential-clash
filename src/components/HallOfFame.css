@@ -1,0 +1,132 @@
+.hall-of-fame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+    color: white;
+    padding: 60px 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.hof-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.hof-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.hof-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin: 0;
+    background: linear-gradient(180deg, #f1c40f 0%, #f39c12 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(241, 196, 15, 0.3);
+}
+
+.hof-subtitle {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-card.gold {
+    border-color: #f1c40f;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.1);
+}
+
+.stat-card.highlight {
+    border-color: #3498db;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.1);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #bdc3c7;
+    letter-spacing: 2px;
+}
+
+.career-highlight {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(90deg, transparent, rgba(241, 196, 15, 0.1), transparent);
+    text-align: center;
+    width: 100%;
+}
+
+.highlight-label {
+    font-size: 0.9rem;
+    color: #f1c40f;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.highlight-value {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hof-footer {
+    margin-top: auto;
+    font-size: 0.7rem;
+    color: #7f8c8d;
+    letter-spacing: 5px;
+    padding: 40px 0;
+    text-transform: uppercase;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

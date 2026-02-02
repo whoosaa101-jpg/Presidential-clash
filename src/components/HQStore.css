@@ -1,0 +1,112 @@
+.hq-store {
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    background: #1a1a1a;
+    color: white;
+}
+
+.section-title {
+    color: var(--executive-gold);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--executive-gold);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.store-card {
+    background: #2c3e50;
+    border: 2px solid #34495e;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.store-card:active {
+    transform: scale(0.95);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.card-name {
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #27ae60;
+    color: white;
+    font-weight: 900;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.buy-btn.premium {
+    background: #8e44ad;
+}
+
+.bundles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.store-bundle {
+    display: flex;
+    align-items: center;
+    background: #2c3e50;
+    border: 2px solid var(--executive-gold);
+    border-radius: 15px;
+    padding: 15px;
+    gap: 15px;
+}
+
+.bundle-icon {
+    font-size: 2rem;
+}
+
+.bundle-info {
+    flex: 1;
+    text-align: left;
+}
+
+.bundle-name {
+    font-weight: 900;
+    color: var(--executive-gold);
+}
+
+.bundle-value {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.store-footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.7rem;
+    color: #666;
+    text-align: center;
+}
